@@ -1,36 +1,29 @@
-# Module 20 Challenge
+# Credit Risk Machine Learning Classification
 
 ## Background
-In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
+This model evaluates a dataset of historical lending activity from a peer-to-peer lending services company, and attempts to identify the creditworthiness of borrowers.
 
 ## Credit Risk Analysis Report
-Write a brief report that includes a summary and analysis of the performance of the machine learning models that you used in this homework. You should write this report as the README.md file included in your GitHub repository.
-
-Structure your report by using the report template that Starter_Code.zip includes, ensuring that it contains the following:
-
-### Overview of Analysis
-An overview of the analysis: Explain the purpose of this analysis.
-
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
-
-### Results
-The results: Using a bulleted list, describe the accuracy score, the precision score, and recall score of the machine learning model.
-
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
 
 ### Summary
-A summary: Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning.
+The linear regression model demonstrates a strong fit to the data, as evidenced by its high R-squared value (0.92). The model is able to account for 92% of changes in credit worthiness based on the lending data. The model's coefficients are also statistically significant, which shows a strong relationship between the lending data and the credit worthiness.
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+### Overview of Analysis
+The core purpose of analyzing creditworthiness with linear regression is to predict the likelihood of a borrower repaying a loan. This prediction empowers lenders to make informed decisions about loan approvals, interest rates, and credit limits. By quantifying credit risk, lenders can mitigate potential losses and manage their portfolios more effectively.
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+1. **Data Collection**: We were provided with historical loan data to analyze, which is stored in the `lending_data.csv` file in the `Resources` directory. The data required minimal cleaning and preprocessing.
+2. **Feature Selection**: The notebook code moves the `loan_status` variable to its own data frame, as it represents loan repayment or default. The rest of the features in the loan data were used as predicting factors.
+3. **Model Building**: We trained a linear regression model to the lending data to compare the relationship between the predictors and loan repayment or default.
+4. **Model Evaluation**: We generated a confusion matrix and a classification report for the model, and assessed the model performance.
+
+### Results
+Accuracy:
+- The model has an overall accuracy of 99%, indicating that it correctly predicts the risk for 99% of the loans in the dataset.
+
+Precision:
+- For low-risk loans, the precision is 1.00, meaning that almost all instances predicted as low-risk are actually low-risk.
+- For high-risk loans, the precision is 0.86, meaning that 86% of instances predicted as high-risk are actually high-risk.
+
+Recall:
+- For low-risk loans, the recall is 0.99, meaning that the model correctly identifies 99% of actual low-risk borrowers.
+- For high-risk loans, the recall is 0.98, meaning that the model correctly identifies 98% of actual high-risk borrowers.
